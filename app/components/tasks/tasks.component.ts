@@ -11,6 +11,8 @@ export class TasksComponent {
 tasks: Task[];
 title: string;
 
+
+
   constructor(private taskService: TaskService){
     this.taskService.getTasks()
     .subscribe(tasks =>{
@@ -36,9 +38,9 @@ deleteTask(id){
   var tasks = this.tasks;
 
   this.taskService.deleteTask(id).subscribe(data =>{
-    if(data.n ==1){
-      for(var i=0;i<tasks.length;i++){
-        if(tasks[i].id == id){
+    if(data.n == 1){
+      for(var i = 0;i < tasks.length;i++){
+        if(tasks[i]._id == id){
           tasks.splice(i,1);
         }
       }
@@ -53,7 +55,7 @@ deleteTask(id){
        isDone: !task.isDone
      };
        this.taskService.updateStatus(_task).subscribe(data =>{
-         task.isDone = task.isDone;
+         task.isDone = !task.isDone;
        });
    }
 

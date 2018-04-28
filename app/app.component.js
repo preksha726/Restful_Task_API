@@ -7,6 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var tasks_service_1 = require("./services/tasks.service");
 var AppComponent = /** @class */ (function () {
     function AppComponent() {
     }
@@ -14,7 +15,8 @@ var AppComponent = /** @class */ (function () {
         core_1.Component({
             moduleId: module.id,
             selector: 'my-app',
-            templateUrl: 'app.component.html'
+            templateUrl: 'app.component.html',
+            providers: [tasks_service_1.TaskService]
         })
     ], AppComponent);
     return AppComponent;
